@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b3b4b945939a54ea0b23d3396115fb, type: 3}
   m_Name: Main_character_Archer_01_SkeletonData
   m_EditorClassIdentifier: 
-  atlasAssets: []
+  atlasAssets:
+  - {fileID: 11400000, guid: 4ade79a6bfeebc74f936a018291443b9, type: 2}
   scale: 0.01
   skeletonJSON: {fileID: 4900000, guid: d988e1bf134b199458e3ed928c69b09e, type: 3}
   isUpgradingBlendModeMaterials: 0
@@ -27,4 +28,4 @@ MonoBehaviour:
   toAnimation: []
   duration: []
   defaultMix: 0.2
-  controller: {fileID: 0}
+  controller: {fileID: 9100000, guid: 256d57baecfcd994bac6d5e4f1fc7438, type: 2}
