@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Spine;
 using Spine.Unity;
 using UnityEngine;
+using Animation = UnityEngine.Animation;
 using AnimationState = Spine.AnimationState;
 
 #region enums
@@ -27,7 +28,8 @@ public enum TypeAnimation
 public class AnimationController : MonoBehaviour
 {
     #region Inspector variable
-    
+
+    [SerializeField] private GameObject portalGameObject;
     [SpineAnimation] public string idleAnimationName;
     [SpineAnimation] public string jumpStartAnimationName;
     [SpineAnimation] public string jumpLoopAnimationName;

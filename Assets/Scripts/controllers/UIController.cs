@@ -20,12 +20,6 @@ public enum ButtonTypeComponent
 
 public class UIController : MonoBehaviour
 {
-    #region private variables
-
-    private Dictionary<ButtonTypeComponent, Button> dictionaryButton = new Dictionary<ButtonTypeComponent, Button>();
-
-    #endregion private variables
-
     #region Inspector variables
 
     [SerializeField] private Button leftMovingButton;
@@ -33,8 +27,16 @@ public class UIController : MonoBehaviour
     [SerializeField] private Button jumpButton;
     [SerializeField] private Button swordAttackButton;
     [SerializeField] private Button bowAttackButton;
+    [SerializeField, Space] private GameObject buttonsGameObject;
+    [SerializeField] private GameObject circleGameObject;
 
     #endregion Inspector variables
+    
+    #region private variables
+
+    private Dictionary<ButtonTypeComponent, Button> dictionaryButton = new Dictionary<ButtonTypeComponent, Button>();
+
+    #endregion private variables
 
     #region Unity functions
 
@@ -50,6 +52,12 @@ public class UIController : MonoBehaviour
     public Button GetButtonFromDictionary(ButtonTypeComponent buttonTypeComponent)
     {
         return dictionaryButton[buttonTypeComponent];
+    }
+
+    public void ChangeUIVisible()
+    {
+        buttonsGameObject.SetActive(!buttonsGameObject.activeSelf);
+        circleGameObject.SetActive(!buttonsGameObject.activeSelf);
     }
 
     #endregion public functions

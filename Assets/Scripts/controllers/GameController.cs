@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -13,6 +14,8 @@ public class GameController : MonoBehaviour
     [Inject] private AnimationController animationController;
     [Inject] private InputController inputController;
     [Inject] private MovementController movementController;
+    [Inject] private Player player;
+    [Inject] private Portal portal;
     
     #endregion private variables
 
@@ -21,12 +24,20 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         SetActionsOnClick();
+        StartFunctions();
     }
 
     #endregion Unity functions
 
     #region private functions
 
+    private void StartFunctions()
+    {
+        portal.AddActionToOnPortalClose(player.ShowPlayer);
+        portal.ClosePortal();
+        player.HidePlayer();
+    }
+    
     private void SetActionsOnClick()
     {
         SetLeftAction();

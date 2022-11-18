@@ -19,6 +19,11 @@ public class MovementController : MonoBehaviour
         rig2D.velocity = Vector2.zero;
         rig2D.AddForce(velocity, ForceMode2D.Force);
     }
+    
+
+    #endregion public functions
+
+    #region private functions
 
     private void CheckPlayerAndChangeRotation(Vector2 velocity)
     {
@@ -32,5 +37,5 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    #endregion public functions
+    #endregion private functions
 }
