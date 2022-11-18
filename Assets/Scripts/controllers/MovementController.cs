@@ -19,7 +19,17 @@ public class MovementController : MonoBehaviour
         rig2D.velocity = Vector2.zero;
         rig2D.AddForce(velocity, ForceMode2D.Force);
     }
-    
+
+    public void SetVelocityToPlayer(Vector2 velocity, bool joystickUse)
+    {
+        if (joystickUse)
+        {
+            CheckPlayerAndChangeRotation(velocity);
+            var rig2D = playerGameObject.GetComponent<Rigidbody2D>();
+            rig2D.velocity = Vector2.zero;
+            rig2D.AddForce(velocity, ForceMode2D.Force);  
+        }
+    }
 
     #endregion public functions
 

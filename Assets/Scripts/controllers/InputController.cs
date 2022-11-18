@@ -9,6 +9,7 @@ public enum TypeMovement
     None,
     MoveLeft,
     MoveRight,
+    Move,
     Jump
 }
 
@@ -31,6 +32,11 @@ public class InputController : MonoBehaviour
 
     #region public functions
 
+    public void SetVelocity(Vector2 newVelocity)
+    {
+        velocity = newVelocity;
+    }
+    
     public Vector2 GetVelocity()
     {
         return velocity;
@@ -42,6 +48,7 @@ public class InputController : MonoBehaviour
         {
             case TypeMovement.MoveLeft: MoveLeft(); break;
             case TypeMovement.MoveRight: MoveRight(); break;
+            case TypeMovement.Move: Move(); break;
             case TypeMovement.Jump: Jump(); break;
             default: break;
         }
@@ -61,6 +68,11 @@ public class InputController : MonoBehaviour
         velocity = Vector2.right * modSpeed * Time.deltaTime;
     }
 
+    private void Move()
+    {
+        velocity *= Time.deltaTime;
+    }
+    
     private void Jump()
     {
         velocity = Vector2.up * modJump * Time.deltaTime;

@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     [Inject] private MovementController movementController;
     [Inject] private Player player;
     [Inject] private Portal portal;
+    [Inject] private PlayerTouchMovement playerTouchMovement;
     
     #endregion private variables
 
@@ -24,6 +25,7 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         SetActionsOnClick();
+        SetActionOnJoystick();
         StartFunctions();
     }
 
@@ -45,6 +47,14 @@ public class GameController : MonoBehaviour
         SetSwordAction();
         SetBowAction();
         SetJumpAction();
+    }
+
+    private void SetActionOnJoystick()
+    {
+        playerTouchMovement.AddActionToOnFingerMove(
+            () => animationController.StartAnimationByType(TypeAnimation.Running),
+            () => inputController.SetVelocity(playerTouchMovement.MovementAmount),
+            () => movementController.SetVelocityToPlayer(inputController.GetVelocity()));
     }
 
     private void SetLeftAction()
