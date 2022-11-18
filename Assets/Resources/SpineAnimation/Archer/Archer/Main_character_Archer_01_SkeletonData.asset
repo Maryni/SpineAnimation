@@ -24,8 +24,17 @@ MonoBehaviour:
     multiplyMaterials: []
     screenMaterials: []
   skeletonDataModifiers: []
-  fromAnimation: []
-  toAnimation: []
-  duration: []
+  fromAnimation:
+  - Attack_Bow
+  - Jump_Loop
+  - Running
+  toAnimation:
+  - Idle_01
+  - Idle_01
+  - Idle_01
+  duration:
+  - 0.3
+  - 0.5
+  - 0.3
   defaultMix: 0.2
   controller: {fileID: 9100000, guid: 256d57baecfcd994bac6d5e4f1fc7438, type: 2}

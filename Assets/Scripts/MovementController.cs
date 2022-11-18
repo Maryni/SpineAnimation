@@ -16,6 +16,7 @@ public class MovementController : MonoBehaviour
     { 
         CheckPlayerAndChangeRotation(velocity);
         var rig2D = playerGameObject.GetComponent<Rigidbody2D>();
+        rig2D.velocity = Vector2.zero;
         rig2D.AddForce(velocity, ForceMode2D.Force);
     }
 
@@ -25,7 +26,7 @@ public class MovementController : MonoBehaviour
         {
             playerGameObject.transform.rotation = Quaternion.Euler(0f,180f,0f);  
         }
-        else
+        else if( velocity.x > 0)
         {
             playerGameObject.transform.rotation = Quaternion.Euler(0f,0f,0f);   
         }

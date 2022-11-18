@@ -65,7 +65,6 @@ public class GameController : MonoBehaviour
     {
         Button bow = uiController.GetButtonFromDictionary(ButtonTypeComponent.BowAttack);
         bow.onClick.AddListener( () =>animationController.StartAnimationByType(TypeAnimation.AttackBow));
-        bow.onClick.AddListener(() => animationController.StartAnimationByType(TypeAnimation.IdleAsEnd));
     }
     
     private void SetJumpAction()

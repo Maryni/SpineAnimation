@@ -128,7 +128,7 @@ public class AnimationController : MonoBehaviour
 
     private void StartIdleAfterAnimation()
     {
-        spineAnimationState.AddAnimation(0, idleAnimationName, true, 0); 
+        spineAnimationState.AddAnimation(0, idleAnimationName, false, 0); 
     }
 
     private void StopAllAnimation()
