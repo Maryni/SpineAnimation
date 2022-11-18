@@ -189,8 +189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830a690e820782242a36f2bfccd82ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modSpeed: 30000
-  modJump: 55000
+  modSpeed: 10000
+  modJump: 25000
 --- !u!114 &30119835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,9 +346,7 @@ GameObject:
   - component: {fileID: 74589169}
   - component: {fileID: 74589172}
   - component: {fileID: 74589171}
-  - component: {fileID: 74589174}
   - component: {fileID: 74589173}
-  - component: {fileID: 74589175}
   m_Layer: 5
   m_Name: Circle
   m_TagString: Untagged
@@ -428,33 +426,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knobGameObject: {fileID: 181339610}
---- !u!114 &74589174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 74589168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e56f5c2b568ede4d9a9f69322c96f27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTouchMovement: {fileID: 74589175}
---- !u!114 &74589175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 74589168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af8177944d8446a4c9d05aed0e4980d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  joystickSize: {x: 200, y: 200}
-  floatingJoystick: {fileID: 74589173}
 --- !u!1 &181339609
 GameObject:
   m_ObjectHideFlags: 0
@@ -2030,7 +2001,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -35, y: -35}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1111020698
@@ -2108,7 +2079,7 @@ MonoBehaviour:
   - {fileID: 30119838}
   - {fileID: 30119841}
   - {fileID: 450141693}
-  - {fileID: 74589174}
+  - {fileID: 2115493880}
   - {fileID: 30119837}
   _installerPrefabs: []
   _autoRun: 1
@@ -3357,6 +3328,8 @@ GameObject:
   - component: {fileID: 2115493878}
   - component: {fileID: 2115493877}
   - component: {fileID: 2115493876}
+  - component: {fileID: 2115493880}
+  - component: {fileID: 2115493881}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3449,3 +3422,30 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2115493880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115493875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e56f5c2b568ede4d9a9f69322c96f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTouchMovement: {fileID: 2115493881}
+--- !u!114 &2115493881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115493875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af8177944d8446a4c9d05aed0e4980d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystickSize: {x: 200, y: 200}
+  floatingJoystick: {fileID: 74589173}
