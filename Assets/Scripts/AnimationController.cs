@@ -12,6 +12,7 @@ public enum TypeAnimation
 {
     None,
     Idle,
+    IdleAsEnd,
     JumpNormal,
     JumpStart,
     JumpLoop,
@@ -61,6 +62,7 @@ public class AnimationController : MonoBehaviour
         switch (typeAnimation)
         {
             case TypeAnimation.Idle : StartIdleAnimation(); break;
+            case TypeAnimation.IdleAsEnd: StartIdleAfterAnimation(); break;
             case TypeAnimation.JumpNormal: StartNormalJumpAnimation(); break;
             case TypeAnimation.JumpStart: StartJumpStartAnimation(); break;
             case TypeAnimation.JumpLoop: StartJumpLoopAnimation(); break;
@@ -116,12 +118,17 @@ public class AnimationController : MonoBehaviour
     
     private void StartRunningAnimation()
     {
-        spineAnimationState.SetAnimation(0, runningAnimationName, true);
+        spineAnimationState.SetAnimation(0, runningAnimationName, false);
     }
     
     private void StartDieAnimation()
     {
         spineAnimationState.SetAnimation(0, dieAnimationName, false);
+    }
+
+    private void StartIdleAfterAnimation()
+    {
+        spineAnimationState.AddAnimation(0, idleAnimationName, true, 0); 
     }
 
     private void StopAllAnimation()
